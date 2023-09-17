@@ -75,15 +75,18 @@ class Api {
 
   // Установка/удаление лайка
   setLikeCard(cardId, is) {
-    return this._insertFetch(`cards/likes/${cardId}`, is ? 'PUT' : 'DELETE')
+    return this._insertFetch(`cards/${cardId}/likes`, is ? 'PUT' : 'DELETE')
     .then(this._checkErr) 
   }
 }
 
+const token = localStorage.getItem("jwt");
+
 export const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-65',
+  // baseUrl: 'http://localhost:4000',
+  baseUrl: 'https://api.mesto.raamat.pw',
   headers: {
-    authorization: '0bc141f1-6053-416b-8022-646082ea4528',
+    authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'
   }
 });

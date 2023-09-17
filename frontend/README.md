@@ -1,4 +1,4 @@
-# Проект "Место"
+# Проект "Место" с авторизацией и регистрацией пользователя
 
  ### Используемые технологии
  
@@ -15,9 +15,11 @@
  - Webpack
  - React
 
-  ### Описание
+ ### Описание
 
- Проект позволяет:
+ Приложение взаимодействует сразу с двумя API: авторизации и API редактирования пользователя и получения карточек. 
+
+ Позволяет:
  - редактировать профиль автора: аватар, имя, род деятельности
  - добавлять/удалять карточки новых мест
  - ставить карточкам лайки
@@ -25,8 +27,9 @@
  
  ### Сайт проекта
  
- [Ссылка на Сайт](https://raamat.github.io/mesto-react/)
+ [Ссылка на Сайт](https://raamat.github.io/mesto-react-auth/)
  
- ### Макет Figma
+ ### Макеты Figma
  
- [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?t=gmHLNEODBpb7uCtZ-0)
+ - [Основной макет](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?t=gmHLNEODBpb7uCtZ-0)
+ - [Форма регистрации и авторизации](https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/JavaScript.-Sprint-12?type=design&node-id=0-1&t=7uEdyGvECDB6hGn4-0)

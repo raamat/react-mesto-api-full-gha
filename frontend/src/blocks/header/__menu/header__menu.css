@@ -1,0 +1,10 @@
+.header__menu {
+  margin: 0;
+  padding-top: 5px;
+  display: flex;
+  list-style-type: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+}

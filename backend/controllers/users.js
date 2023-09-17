@@ -1,3 +1,4 @@
+const { NODE_ENV, SECRET_KEY } = process.env;
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken');
@@ -5,8 +6,6 @@ const User = require('../models/user');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
 const NotFoundError = require('../errors/NotFoundError');
-
-const { SECRET_KEY } = require('../utils/constants');
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
@@ -81,8 +80,11 @@ module.exports.login = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const payload = { _id: user._id };
-      const token = JWT.sign(payload, SECRET_KEY, { expiresIn: '7d' });
-
+      const token = JWT.sign(
+        payload,
+        NODE_ENV === 'production' ? SECRET_KEY : 'dev-secret',
+        { expiresIn: '7d' },
+      );
       res.status(200).send({ token });
     })
     .catch(next);

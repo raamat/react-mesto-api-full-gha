@@ -1,6 +1,6 @@
 const { celebrate, Joi } = require('celebrate');
 
-const { REGULAR_EXPRESSION } = require('../utils/constants');
+const REGULAR_EXPRESSION = /https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,}/i;
 
 const validationGetUserById = celebrate({
   params: Joi.object().keys({
