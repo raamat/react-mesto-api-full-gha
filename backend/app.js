@@ -13,7 +13,8 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const app = express();
 app.use(express.json());
 
-app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.raamat.pw'], credentials: true, maxAge: 30 }));
+// app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.raamat.pw'], credentials: true, maxAge: 30 }));
+app.use(cors());
 
 app.use(helmet());
 
