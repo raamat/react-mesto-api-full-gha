@@ -5,10 +5,14 @@ class Api {
   
   // Универсальный метод для формирования запроса
   _insertFetch(endUrl, method, data) {
+    const token = localStorage.getItem("jwt");
     // Разбиваем объект на свойства
-    const {baseUrl, headers} = this._options;
+    const { baseUrl, headers } = this._options;
     return fetch(`${baseUrl}/${endUrl}`, {
-      headers, 
+      headers: {
+         ...headers,
+         authorization: `Bearer ${token}`,
+      },
       method, 
       body: data ? JSON.stringify(data) : undefined
     });
@@ -80,13 +84,10 @@ class Api {
   }
 }
 
-const token = localStorage.getItem("jwt");
-
 export const api = new Api({
   // baseUrl: 'http://localhost:4000',
   baseUrl: 'https://api.mesto.raamat.pw',
   headers: {
-    authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'
-  }
+  },
 });
