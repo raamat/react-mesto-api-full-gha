@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.81.25
+IP 158.160.81.25
 
 Frontend https://mesto.raamat.pw
 
