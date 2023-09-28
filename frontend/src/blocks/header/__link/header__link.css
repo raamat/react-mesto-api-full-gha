@@ -1,5 +1,6 @@
 .header__link {
   text-decoration: none;
+  color: inherit;
 }
 
 .header__link:visited {
